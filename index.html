@@ -21,24 +21,27 @@
     }
 
     .container {
-        max-width: 900px;
-        margin: 30px auto;
+        max-width: 95%;
+        margin: 20px auto;
         background: white;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        overflow-x: auto; /* Горизонтальная прокрутка на маленьких экранах */
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 20px;
+        margin-top: 10px;
+        min-width: 600px; /* Чтобы таблица не сжималась слишком сильно */
     }
 
     th, td {
-        padding: 12px;
+        padding: 10px;
         border-bottom: 1px solid #ddd;
         text-align: left;
+        font-size: 16px;
     }
 
     th {
@@ -46,12 +49,13 @@
     }
 
     button {
-        padding: 8px 14px;
-        margin-right: 5px;
+        padding: 8px 12px;
+        margin: 2px 2px 2px 0;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         font-size: 14px;
+        min-width: 80px;
     }
 
     .add-btn {
@@ -81,14 +85,17 @@
         height: 100%;
         overflow: auto;
         background-color: rgba(0,0,0,0.4);
+        padding: 10px;
+        box-sizing: border-box;
     }
 
     .modal-content {
         background-color: #fff;
-        margin: 10% auto;
+        margin: 5% auto;
         padding: 20px;
         border-radius: 10px;
-        width: 400px;
+        width: 100%;
+        max-width: 400px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
@@ -99,6 +106,7 @@
         border-radius: 5px;
         border: 1px solid #ccc;
         box-sizing: border-box;
+        font-size: 16px;
     }
 
     .modal-buttons {
@@ -107,6 +115,29 @@
 
     .modal-buttons button {
         margin-left: 10px;
+    }
+
+    /* Адаптив для маленьких экранов */
+    @media (max-width: 600px) {
+        header {
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        th, td {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        button {
+            font-size: 12px;
+            padding: 6px 8px;
+            min-width: 70px;
+        }
+
+        .modal input, .modal select {
+            font-size: 14px;
+        }
     }
 </style>
 </head>
